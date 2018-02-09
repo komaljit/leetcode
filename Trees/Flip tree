@@ -1,0 +1,44 @@
+from binarytree import build
+root = build([1,2,3,5,None,8,9,10])
+print(root)
+
+
+class bib:
+    def __init__(self,val,left = None, right = None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def flip(node):
+    if node == None:
+        return None
+    left = node.left
+    node.left = flip(node.right)
+    node.right = flip(left)
+    return node
+
+print(flip(root))
+
+"""
+
+INPUT:
+       1__
+      /   \
+     2     3
+    /     / \
+  _5     8   9
+ /
+10
+
+OUTPUT:
+    __1
+   /   \
+  3     2
+ / \     \
+9   8     5
+           \
+            10
+
+"""
+
+
