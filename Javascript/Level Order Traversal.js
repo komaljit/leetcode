@@ -1,4 +1,4 @@
- */
+
 var traversal = function(ret, root, depth) {
     if(root === null) {
         return;
